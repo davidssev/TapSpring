@@ -1,0 +1,9 @@
+Package: com.milodarling.tapspring
+Name: TapSpring
+Depends: mobilesubstrate, applist, preferenceloader
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Tap an icon to respring!
+Maintainer: Milo Darling
+Author: Milo Darling
+Section: Tweaks

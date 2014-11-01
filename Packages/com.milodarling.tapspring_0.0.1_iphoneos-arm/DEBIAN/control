@@ -1,0 +1,12 @@
+Package: com.milodarling.tapspring
+Name: TapSpring
+Version: 0.0.1
+Architecture: iphoneos-arm
+Author: Milo Darling <milodarling98+tapspring@gmail.com>
+Depiction: http://rcrepo.com/depictions/?dep=com.milodarling.tapspring
+Priority: extra
+Section: Tweaks
+Description: Tap an icon to respring!
+Depends: mobilesubstrate, preferenceloader, applist
+Homepage: http://reddit.com/r/rcrepo
+Maintainer: TheMacMini09 <themacmini09@gmail.com>
