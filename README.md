@@ -1,7 +1,9 @@
 TapSpring
 =========
 
-Tap an icon to respring
+Tap an icon to respring.
+
+Get in in the RCRepo: http://rcrepo.com
 
 Licensed under MIT License.
 
