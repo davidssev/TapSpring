@@ -22,9 +22,14 @@ static NSDictionary *preferences;
 
 static void loadPreferences() {
     //read preferences
-    [preferences release];
+    if (preferences)
+        [preferences release];
     CFStringRef appID = CFSTR("com.milodarling.tapspring");
     CFArrayRef keyList = CFPreferencesCopyKeyList(appID , kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
+    if (!keyList) {
+        NSLog(@"There's been an error getting the key list!");
+        return;
+    }
     preferences = (NSDictionary *)CFPreferencesCopyMultiple(keyList, appID , kCFPreferencesCurrentUser, kCFPreferencesAnyHost);
     CFRelease(keyList);
     
@@ -44,8 +49,10 @@ static void loadPreferences() {
 -(void)_launchIcon:(id)tapped {
     NSString *icon = [tapped applicationBundleID];
     if ([[preferences objectForKey:icon] boolValue]) {
+        NSLog(@"[TapSpring] Enabled");
         [(SpringBoard *)[UIApplication sharedApplication] _relaunchSpringBoardNow];
     } else {
+        NSLog(@"[TapSpring] Not enabled");
         %orig;
     }
 }
